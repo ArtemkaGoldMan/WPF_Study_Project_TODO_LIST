@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TODO_List"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="ToDo App" Height="450" Width="400" ResizeMode="NoResize" Background="#FFC8F38B">
+    <Grid Background="#FFCBF19C">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="75" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <Button Click="AddTodoButton_Click" Grid.Row="5" Grid.Column="2" Content="Add ToDo" Background="#FFA4E6C0" />
+
+        <TextBox x:Name="TodoInput" Grid.Row="3" Grid.Column="1" Background="#FFD8EDC4" BorderBrush="#FF355AC9" Grid.ColumnSpan="3"  />
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" Background="#FF74EE9A" BorderBrush="#FF6DE639">
+            <StackPanel x:Name="TodoList"  Background="#FFDAE8D5" Grid.ColumnSpan="3" ></StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Window>
